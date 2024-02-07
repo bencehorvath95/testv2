@@ -27,15 +27,14 @@ jobs:
         with:
           context: .
           push: true
-          tags: gcr.io/octave-272909/testv2:latest
+          tags: gcr.io/octave-272909/testv2
           build-args: |
             HTTP_PORT=8080
 
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@main
         with:
-          image: gcr.io/octave-272909/testv2:latest
-          service: testv2
+          image: gcr.io/octave-272909/testv2
           region: us-central1
           platform: managed
           allow-unauthenticated: true
