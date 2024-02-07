@@ -18,7 +18,7 @@ jobs:
         uses: google-github-actions/setup-gcloud@master
         with:
           version: '286.0.0'
-          service_account_key: 579e8aa71385e555c58a5cc9cca28df620a16ae4
+          service_account_key: ${{ secrets.GCP_SA_KEY_JSON }}
           service_account_email: github-actions-test@octave-272909.iam.gserviceaccount.com
           project_id: octave-272909
 
@@ -34,5 +34,5 @@ jobs:
           service: testv2
           image: gcr.io/octave-272909/testv2
           region: REGION
-          credentials: 79e8aa71385e555c58a5cc9cca28df620a16ae4
+          credentials: ${{ secrets.GCP_SA_KEY_JSON }}
           project_id: octave-272909
