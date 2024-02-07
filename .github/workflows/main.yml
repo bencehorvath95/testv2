@@ -1,4 +1,4 @@
-# .github/workflows/deploy.yml
+# .github/workflows/deploy.yml 
 name: Deploy testv2 to Google Cloud Run
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      # Build and push image to Google Container Registry
+      # Build and push image to Google Container Registry.
       - name: Setting up
         uses: google-github-actions/setup-gcloud@master
         with:
@@ -22,7 +22,7 @@ jobs:
           service_account_email: github-actions-test@octave-272909.iam.gserviceaccount.com
           project_id: octave-272909
 
-      - name: Building (🏗)
+      - name: Building 
         run: |-
           gcloud builds submit \
             --tag gcr.io/	octave-272909/testv2
